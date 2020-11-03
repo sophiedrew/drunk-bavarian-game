@@ -7,14 +7,14 @@ class Player {
   }
 
   moveLeft(steps) {
-    if (this.x <= 0) {
+    if (this.x <= 50) {
       return;
     }
     this.x -= steps;
   }
 
   moveRight(steps) {
-    if (this.x >= WIDTH - this.width) {
+    if (this.x >= WIDTH - this.width - 10) {
       return;
     }
     this.x += steps;
