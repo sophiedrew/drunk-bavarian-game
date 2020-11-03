@@ -8,6 +8,13 @@ class Game {
     this.arrow = new Arrow();
   }
 
+  preload() {
+    this.startScreen = loadImage("./Screens/startScreen.png");
+    this.wonScreen = loadImage("./Screens/wonScreen.png");
+    this.lostScreenSmashed = loadImage("./Screens/lostScreen-smashed.png");
+    this.lostScreenSober = loadImage("./Screens/lostScreen-sober.png");
+  }
+
   draw() {
     // BAR //
     this.bar.draw();
@@ -25,11 +32,11 @@ class Game {
       this.player.moveRight(5);
     }
     // BEER OBSTACLES //
-    if (frameCount % (60 * Math.floor(random(2, 9))) === 0) {
+    if (frameCount % (60 * Math.floor(random(1, 2))) === 0) {
       this.allBeerObstacles.push(new BeerObstacle()); // 1. creates new beer
     }
 
-    if (frameCount % 8 === 0) {
+    if (frameCount % 3 === 0) {
       this.allBeerObstacles.forEach((obstacle) => {
         obstacle.moveDown(); // 2. beer moves down
       });
@@ -43,7 +50,7 @@ class Game {
       }
       // COLLISION CHECK BEER + PLAYER
       if (this.collisionCheckPlayer(this.player, obstacle)) {
-        this.score += 1;
+        this.score += 10;
         console.log(this.score);
         this.allBeerObstacles.splice(index, 1);
         this.arrow.moveUp(10);
@@ -51,11 +58,11 @@ class Game {
     });
 
     // WATER OBSTACLES //
-    if (frameCount % (60 * Math.floor(random(2, 9))) === 0) {
+    if (frameCount % (60 * Math.floor(random(1, 2))) === 0) {
       this.allWaterObstacles.push(new WaterObstacle()); // 1. creates new water
     }
 
-    if (frameCount % 5 === 0) {
+    if (frameCount % 2 === 0) {
       this.allWaterObstacles.forEach((obstacle) => {
         obstacle.moveDown(); // 2. Water moves down
       });
@@ -70,12 +77,34 @@ class Game {
 
       // COLLISION CHECK WATER + PLAYER
       if (this.collisionCheckPlayer(this.player, obstacle)) {
-        this.score -= 1;
+        this.score -= 10;
         console.log(this.score);
         this.allWaterObstacles.splice(index, 1);
         this.arrow.moveDown(10);
       }
     }); // end of loop water
+
+    if (gameStart === true && frameCount > 3600) {
+      image(this.wonScreen, 0, 0);
+      gameOver = true;
+      noLoop();
+    }
+
+    if (this.score > 190) {
+      image(this.lostScreenSmashed, 0, 0);
+      gameOver = true;
+      noLoop();
+    }
+
+    if (this.score < 120) {
+      image(this.lostScreenSober, 0, 0);
+      gameOver = true;
+      noLoop();
+    }
+
+    if (gameStart === false) {
+      image(this.startScreen, 0, 0);
+    }
   } // End of draw function
 
   checkIfWaterIntersectsBeer(water, beer) {

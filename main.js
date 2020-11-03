@@ -1,11 +1,12 @@
-function preload() {
-  barImage = loadImage("./Bar_promille-level.001.png");
-  arrowImage = loadImage("./arrow_promille-level.001.png");
-}
-
 const game = new Game();
 let gameStart = false;
 let gameOver = false;
+
+function preload() {
+  barImage = loadImage("./images/Bar_promille-level.001.png");
+  arrowImage = loadImage("./images/arrowImage.png");
+  game.preload();
+}
 
 function setup() {
   createCanvas(WIDTH, HEIGHT);
@@ -18,7 +19,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (gameStart === false && keyCode === 13) {
+  if (gameStart === false && keyCode === 32) {
     gameStart = true;
   }
 

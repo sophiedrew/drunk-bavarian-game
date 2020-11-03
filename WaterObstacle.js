@@ -1,6 +1,6 @@
 class WaterObstacle {
   constructor() {
-    this.x = random(width - 50, 50);
+    this.x = random(width - 150, 150);
     this.y = -1; // starts above the canvas
     this.width = 50;
     this.height = 30;
