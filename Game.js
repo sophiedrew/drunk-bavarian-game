@@ -32,11 +32,11 @@ class Game {
       this.player.moveRight(5);
     }
     // BEER OBSTACLES //
-    if (frameCount % (60 * Math.floor(random(1, 2))) === 0) {
+    if (frameCount % (60 * Math.floor(random(2, 3))) === 0) {
       this.allBeerObstacles.push(new BeerObstacle()); // 1. creates new beer
     }
 
-    if (frameCount % 3 === 0) {
+    if (frameCount % 7 === 0) {
       this.allBeerObstacles.forEach((obstacle) => {
         obstacle.moveDown(); // 2. beer moves down
       });
@@ -44,6 +44,7 @@ class Game {
 
     this.allBeerObstacles.forEach((obstacle, index) => {
       obstacle.draw();
+
       // 3. everytime the obstacle goes off canvas, remove it from the array
       if (obstacle.y >= HEIGHT) {
         this.allBeerObstacles.splice(index, 1);
@@ -58,11 +59,11 @@ class Game {
     });
 
     // WATER OBSTACLES //
-    if (frameCount % (60 * Math.floor(random(1, 2))) === 0) {
+    if (frameCount % (60 * Math.floor(random(2, 4))) === 0) {
       this.allWaterObstacles.push(new WaterObstacle()); // 1. creates new water
     }
 
-    if (frameCount % 2 === 0) {
+    if (frameCount % 5 === 0) {
       this.allWaterObstacles.forEach((obstacle) => {
         obstacle.moveDown(); // 2. Water moves down
       });
@@ -106,18 +107,6 @@ class Game {
       image(this.startScreen, 0, 0);
     }
   } // End of draw function
-
-  checkIfWaterIntersectsBeer(water, beer) {
-    if (
-      water.y <= beer.y + beer.height &&
-      water.y + water.height >= beer.y &&
-      water.y + water.width >= beer.x &&
-      water.x <= beer.x + beer.width
-    ) {
-      return true;
-    }
-    return false;
-  }
 
   collisionCheckPlayer(player, obstacle) {
     if (

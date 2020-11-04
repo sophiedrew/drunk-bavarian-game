@@ -23,10 +23,6 @@ function keyPressed() {
     gameStart = true;
   }
 
-  if (gameOver === true && gameStart === false && keyCode === 13) {
-    gameStart = true;
-  }
-
   if (keyCode === 13) {
     document.location.reload();
   }
