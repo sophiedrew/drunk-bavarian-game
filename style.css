@@ -1,0 +1,20 @@
+body {
+  background-color: #000;
+}
+
+canvas {
+  margin: 0 auto;
+  display: block;
+}
+
+h1 {
+  color: white;
+  font-family: BronxBystreets;
+}
+
+article {
+  color: black;
+  font-family: HelveticaNeue;
+  background-color: white;
+  width: 250px;
+}

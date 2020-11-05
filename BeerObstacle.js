@@ -2,7 +2,7 @@ class BeerObstacle {
   constructor() {
     this.x = random(width - 150, 150);
     this.y = -1; // starts above the canvas
-    this.width = 30;
+    this.width = 40;
     this.height = 50;
   }
 
@@ -11,6 +11,6 @@ class BeerObstacle {
   }
 
   draw() {
-    rect(this.x, this.y, this.width, this.height);
+    image(beerImage, this.x, this.y, this.width, this.height);
   }
 }

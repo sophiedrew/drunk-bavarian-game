@@ -2,8 +2,8 @@ class WaterObstacle {
   constructor() {
     this.x = random(width - 150, 150);
     this.y = -1; // starts above the canvas
-    this.width = 50;
-    this.height = 30;
+    this.width = 30;
+    this.height = 50;
   }
 
   moveDown() {
@@ -11,6 +11,6 @@ class WaterObstacle {
   }
 
   draw() {
-    rect(this.x, this.y, this.width, this.height);
+    image(waterImage, this.x, this.y, this.width, this.height);
   }
 }

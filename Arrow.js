@@ -1,9 +1,9 @@
 class Arrow {
   constructor() {
-    this.x = 30;
-    this.y = 150;
-    this.width = 10;
-    this.height = 10;
+    this.x = 25;
+    this.y = 145;
+    this.width = 20;
+    this.height = 8;
   }
 
   moveUp(steps) {
@@ -21,6 +21,6 @@ class Arrow {
   }
 
   draw() {
-    image(arrowImage, this.x, this.y, this.width, this.height);
+    rect(this.x, this.y, this.width, this.height);
   }
 }

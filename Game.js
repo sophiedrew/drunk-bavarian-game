@@ -4,6 +4,7 @@ class Game {
     this.allBeerObstacles = [];
     this.player = new Player();
     this.score = 150;
+    this.background = new Background();
     this.bar = new Bar();
     this.arrow = new Arrow();
   }
@@ -16,6 +17,9 @@ class Game {
   }
 
   draw() {
+    // BACKGROUND//
+    this.background.draw();
+
     // BAR //
     this.bar.draw();
 
@@ -46,7 +50,7 @@ class Game {
       obstacle.draw();
 
       // 3. everytime the obstacle goes off canvas, remove it from the array
-      if (obstacle.y >= HEIGHT) {
+      if (obstacle.y >= HEIGHT - 100) {
         this.allBeerObstacles.splice(index, 1);
       }
       // COLLISION CHECK BEER + PLAYER
@@ -72,7 +76,7 @@ class Game {
     this.allWaterObstacles.forEach((obstacle, index) => {
       obstacle.draw();
       // 3. everytime the obstacle goes off canvas, remove it from the array
-      if (obstacle.y >= HEIGHT) {
+      if (obstacle.y >= HEIGHT - 100) {
         this.allWaterObstacles.splice(index, 1);
       }
 
@@ -91,7 +95,7 @@ class Game {
       noLoop();
     }
 
-    if (this.score > 190) {
+    if (this.score > 180) {
       image(this.lostScreenSmashed, 0, 0);
       gameOver = true;
       noLoop();

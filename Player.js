@@ -1,26 +1,26 @@
 class Player {
   constructor() {
     this.x = 210;
-    this.y = 150;
-    this.width = 80;
-    this.height = 100;
+    this.y = 185;
+    this.width = 100;
+    this.height = 166;
   }
 
   moveLeft(steps) {
-    if (this.x <= 100) {
+    if (this.x <= 120) {
       return;
     }
     this.x -= steps;
   }
 
   moveRight(steps) {
-    if (this.x >= WIDTH - this.width - 100) {
+    if (this.x >= WIDTH - this.width - 80) {
       return;
     }
     this.x += steps;
   }
 
   draw() {
-    rect(this.x, this.y, this.width, this.height);
+    image(playerImage, this.x, this.y, this.width, this.height);
   }
 }
