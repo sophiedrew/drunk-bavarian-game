@@ -1,20 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #000;
+  background-color: white;
+  margin: 50px;
 }
 
 canvas {
   margin: 0 auto;
   display: block;
-}
-
-h1 {
-  color: white;
-  font-family: BronxBystreets;
-}
-
-article {
-  color: black;
-  font-family: HelveticaNeue;
-  background-color: white;
-  width: 250px;
 }

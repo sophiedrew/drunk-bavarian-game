@@ -18,7 +18,7 @@ function setup() {
 
 function draw() {
   clear();
-  background("black");
+  background("white");
   game.draw();
 }
 
