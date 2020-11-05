@@ -5,7 +5,6 @@ let gameOver = false;
 function preload() {
   bgImage = loadImage("./Screens/background.png");
   barImage = loadImage("./images/Bar_promille-level.001.png");
-  arrowImage = loadImage("./images/arrowImage.png");
   playerImage = loadImage("./images/PlayerWithHand.png");
   waterImage = loadImage("./images/WaterGlass.png");
   beerImage = loadImage("./images/BeerGlass.png");

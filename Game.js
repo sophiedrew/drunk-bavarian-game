@@ -30,10 +30,10 @@ class Game {
     this.player.draw();
 
     if (keyIsDown(37)) {
-      this.player.moveLeft(5);
+      this.player.moveLeft(7.5);
     }
     if (keyIsDown(39)) {
-      this.player.moveRight(5);
+      this.player.moveRight(7.5);
     }
     // BEER OBSTACLES //
     if (frameCount % (60 * Math.floor(random(2, 3))) === 0) {
@@ -50,7 +50,7 @@ class Game {
       obstacle.draw();
 
       // 3. everytime the obstacle goes off canvas, remove it from the array
-      if (obstacle.y >= HEIGHT - 100) {
+      if (obstacle.y >= HEIGHT - 150) {
         this.allBeerObstacles.splice(index, 1);
       }
       // COLLISION CHECK BEER + PLAYER
@@ -58,7 +58,7 @@ class Game {
         this.score += 10;
         console.log(this.score);
         this.allBeerObstacles.splice(index, 1);
-        this.arrow.moveUp(10);
+        this.arrow.moveUp(15);
       }
     });
 
@@ -76,7 +76,7 @@ class Game {
     this.allWaterObstacles.forEach((obstacle, index) => {
       obstacle.draw();
       // 3. everytime the obstacle goes off canvas, remove it from the array
-      if (obstacle.y >= HEIGHT - 100) {
+      if (obstacle.y >= HEIGHT - 150) {
         this.allWaterObstacles.splice(index, 1);
       }
 
@@ -85,7 +85,7 @@ class Game {
         this.score -= 10;
         console.log(this.score);
         this.allWaterObstacles.splice(index, 1);
-        this.arrow.moveDown(10);
+        this.arrow.moveDown(15);
       }
     }); // end of loop water
 

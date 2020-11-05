@@ -2,8 +2,8 @@ class Background {
   constructor() {
     this.x = 0;
     this.y = 0;
-    this.width = 500;
-    this.height = 300;
+    this.width = 750;
+    this.height = 450;
   }
 
   draw() {

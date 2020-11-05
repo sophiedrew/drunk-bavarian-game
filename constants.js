@@ -1,5 +1,5 @@
-const WIDTH = 500;
-const HEIGHT = 350;
+const WIDTH = 750;
+const HEIGHT = 525;
 
 let barImage;
 let arrowImage;

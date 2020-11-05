@@ -1,20 +1,20 @@
 class Player {
   constructor() {
-    this.x = 210;
-    this.y = 185;
-    this.width = 100;
-    this.height = 166;
+    this.x = 315;
+    this.y = 180;
+    this.width = 150;
+    this.height = 350;
   }
 
   moveLeft(steps) {
-    if (this.x <= 120) {
+    if (this.x <= 180) {
       return;
     }
     this.x -= steps;
   }
 
   moveRight(steps) {
-    if (this.x >= WIDTH - this.width - 80) {
+    if (this.x >= WIDTH - this.width - 120) {
       return;
     }
     this.x += steps;

@@ -1,13 +1,13 @@
 class BeerObstacle {
   constructor() {
-    this.x = random(width - 150, 150);
-    this.y = -1; // starts above the canvas
-    this.width = 40;
-    this.height = 50;
+    this.x = random(width - 225, 225);
+    this.y = -2; // starts above the canvas
+    this.width = 60;
+    this.height = 75;
   }
 
   moveDown() {
-    this.y += 10;
+    this.y += 15;
   }
 
   draw() {

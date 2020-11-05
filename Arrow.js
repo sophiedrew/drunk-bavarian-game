@@ -1,20 +1,20 @@
 class Arrow {
   constructor() {
-    this.x = 25;
-    this.y = 145;
-    this.width = 20;
-    this.height = 8;
+    this.x = 30;
+    this.y = 217.5;
+    this.width = 30;
+    this.height = 12;
   }
 
   moveUp(steps) {
-    if (this.y <= 50) {
+    if (this.y <= 75) {
       return;
     }
     this.y -= steps;
   }
 
   moveDown(steps) {
-    if (this.y >= 250 - this.height / 2) {
+    if (this.y >= 375 - this.height / 2) {
       return;
     }
     this.y += steps;

@@ -1,9 +1,9 @@
 class Bar {
   constructor() {
-    this.x = 30;
-    this.y = 50;
-    this.width = 10;
-    this.height = 200;
+    this.x = 37.5;
+    this.y = 75;
+    this.width = 15;
+    this.height = 300;
   }
 
   draw() {
