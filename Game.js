@@ -10,10 +10,10 @@ class Game {
   }
 
   preload() {
-    this.startScreen = loadImage("./Screens/startScreenWHITE.png");
-    this.wonScreen = loadImage("./Screens/wonScreenWHITE.png");
-    this.lostScreenSmashed = loadImage("./Screens/lostScreen-smashedWHITE.png");
-    this.lostScreenSober = loadImage("./Screens/lostScreen-soberWHITE.png");
+    this.startScreen = loadImage("./Screens/startScreen.png");
+    this.wonScreen = loadImage("./Screens/wonScreen.png");
+    this.lostScreenSmashed = loadImage("./Screens/lostScreen-smashed.png");
+    this.lostScreenSober = loadImage("./Screens/lostScreen-sober.png");
   }
 
   draw() {
